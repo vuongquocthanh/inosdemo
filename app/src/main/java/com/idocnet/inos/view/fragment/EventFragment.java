@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +22,7 @@ import com.idocnet.inos.model.Day;
 import com.idocnet.inos.utils.Constants;
 import com.idocnet.inos.view.adapter.MonthAdapter;
 import com.idocnet.inos.view.fragment.event.DayFragment;
+import com.idocnet.inos.view.fragment.event.EventCreateFragment;
 import com.idocnet.inos.view.fragment.event.MonthFragment;
 import com.idocnet.inos.view.fragment.event.WeekFragment;
 
@@ -35,6 +37,8 @@ public class EventFragment extends Fragment implements MonthChangeNameListener, 
     TextView tvMonthName;
     @BindView(R.id.tv_view_type)
     TextView tvViewType;
+    @BindView(R.id.frameLayout)
+    FrameLayout frameLayout;
 
     @Nullable
     @Override
@@ -50,6 +54,14 @@ public class EventFragment extends Fragment implements MonthChangeNameListener, 
     @Override
     public void changeMonthName(String name) {
         tvMonthName.setText(name);
+    }
+
+
+    @OnClick(R.id.fab)
+    void fabClick(){
+        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+        transaction.replace(R.id.frameLayout, new EventCreateFragment());
+        transaction.commit();
     }
 
     @OnClick({R.id.iv_view_type, R.id.tv_view_type})

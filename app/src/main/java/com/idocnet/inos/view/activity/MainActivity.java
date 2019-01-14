@@ -11,8 +11,10 @@ import com.idocnet.inos.view.fragment.HomeFragment;
 import com.idocnet.inos.view.fragment.MessagerFragment;
 import com.idocnet.inos.view.fragment.NotificationFragment;
 import com.idocnet.inos.view.fragment.SolutionFragment;
+import com.idocnet.inos.view.fragment.event.EventCreateFragment;
+import com.idocnet.inos.view.fragment.event.EventTypeFragment;
 
-public class MainActivity extends BaseMenuActivity {
+public class MainActivity extends BaseMenuActivity implements EventTypeFragment.onClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,5 +61,13 @@ public class MainActivity extends BaseMenuActivity {
         navIndex = postion;
         setColorItemClickBotNav();
         viewPager.setCurrentItem(navIndex);
+    }
+
+    @Override
+    public void lnTaskClick() {
+        Bundle bundle = new Bundle();
+        bundle.putString("data", "true");
+        EventCreateFragment eventCreateFragment = new EventCreateFragment();
+        eventCreateFragment.setArguments(bundle);
     }
 }
