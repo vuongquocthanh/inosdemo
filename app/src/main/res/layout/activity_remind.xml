@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RemindActivity"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbarTask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
+
+        </android.support.v7.widget.Toolbar>
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:src="@drawable/ic_back"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TitleToolbar"
+            android:text="Nhắc nhở"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:id="@+id/lnNotification"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notification"
+            android:textSize="18sp"
+            android:textColor="@color/colorText"/>
+
+        <TextView
+            android:id="@+id/tvNotification"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:gravity="right"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_next"
+            android:layout_gravity="end"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/bg_line"/>
+
+    <LinearLayout
+        android:id="@+id/lnTruoc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trước"
+            android:textSize="18sp"
+            android:textColor="@color/colorText"/>
+
+        <TextView
+            android:id="@+id/tvTruoc"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:gravity="right"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_next"
+            android:layout_gravity="end"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/bg_line"/>
+
+</LinearLayout>

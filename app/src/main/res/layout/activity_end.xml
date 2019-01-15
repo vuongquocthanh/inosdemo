@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EndActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbarTask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
+
+        </android.support.v7.widget.Toolbar>
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:src="@drawable/ic_back"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TitleToolbar"
+            android:text="Kết thúc"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/lnNeverRepeat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Không bao giờ"
+            android:textSize="18sp"/>
+        <CheckBox
+            android:id="@+id/cbNeverRepeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/checkbox"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/bg_line"/>
+
+    <LinearLayout
+        android:id="@+id/lnDateRepeat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Ngày cụ thể"
+            android:textSize="18sp"/>
+        <CheckBox
+            android:id="@+id/cbDateRepeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/checkbox"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/bg_line"/>
+
+    <LinearLayout
+        android:id="@+id/lnNumberRepeat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Sau một số lần lặp lại"
+            android:textSize="18sp"/>
+        <CheckBox
+            android:id="@+id/cbNumberRepeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/checkbox"/>
+    </LinearLayout>
+</LinearLayout>

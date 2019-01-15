@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TaskActivity"
+    tools:context=".VisibilityActivity"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -27,14 +27,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/TitleToolbar"
-            android:text="Loại sự kiện"
+            android:text="Visibility"
             android:layout_centerInParent="true"/>
     </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvEventType"
+        android:id="@+id/rvVisibility"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </android.support.v7.widget.RecyclerView>
+        android:layout_height="match_parent" />
 
 </LinearLayout>

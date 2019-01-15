@@ -22,7 +22,17 @@
             </intent-filter>
         </activity>
         <activity android:name=".app.BaseMenuActivity" />
-        <activity android:name=".TaskActivity"></activity>
+        <activity android:name=".TaskActivity" />
+        <activity android:name=".AddParticipantsActivity" />
+        <activity android:name=".AddInfoActivity" />
+        <activity android:name=".RepeatActivity" />
+        <activity android:name=".RemindActivity" />
+        <activity android:name=".NotificationActivity" />
+        <activity android:name=".BeforeEventActivity" />
+        <activity android:name=".EndActivity" />
+        <activity android:name=".ChooseColorActivity" />
+        <activity android:name=".VisibilityActivity" />
+        <activity android:name=".EventTypeActivity"></activity>
     </application>
 
 </manifest>

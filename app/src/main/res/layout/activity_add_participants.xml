@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TaskActivity"
+    tools:context=".AddParticipantsActivity"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -23,16 +23,30 @@
             android:layout_height="wrap_content"
             android:padding="15dp"
             android:src="@drawable/ic_back"/>
+        <EditText
+            android:id="@+id/edSearch"
+            android:background="@drawable/bg_searchview"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/enterName"
+            android:textColorHint="@color/colorWhite"
+            android:textColor="@color/colorWhite"
+            android:layout_centerInParent="true"/>
+
         <TextView
+            android:id="@+id/tvSave"
+            android:visibility="gone"
+            android:layout_marginRight="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/TitleToolbar"
-            android:text="Loại sự kiện"
-            android:layout_centerInParent="true"/>
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/colorWhite"
+            android:text="Lưu"/>
     </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvEventType"
+        android:id="@+id/rvAddParticipants"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </android.support.v7.widget.RecyclerView>
