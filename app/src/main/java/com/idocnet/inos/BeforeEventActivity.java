@@ -32,7 +32,6 @@ public class BeforeEventActivity extends AppCompatActivity {
         typeTime.setMinValue(0);
         typeTime.setMaxValue(typeTimes.length-1);
         typeTime.setDisplayedValues(typeTimes);
-        typeTime.setOutlineSpotShadowColor(getResources().getColor(R.color.colorAccent));
         edNumberPicker.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
