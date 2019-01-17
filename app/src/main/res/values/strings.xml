@@ -35,4 +35,23 @@
     <string name="timeEnd">09:00</string>
     <string name="enterName">Nhập tên</string>
     <string name="addInfo">Thêm thông tin</string>
+    <string name="newMessage">Trò chuyện mới</string>
+    <string name="newGroup">Nhóm mới</string>
+    <string name="newContact">Liên hệ mới</string>
+    <string name="all">Tất cả</string>
+    <string name="Organization1">Organization 1</string>
+    <string name="Organization2">Organization 2</string>
+    <string name="myContact">My contact</string>
+    <string name="notifycation_off">Tắt thông báo</string>
+    <string name="setting">Cài đặt</string>
+    <string name="online"><![CDATA[ Trực tuyến]]></string>
+    <string name="busy">Bận</string>
+    <string name="absent">Vắng mặt</string>
+    <string name="offline">Ngoại tuyến</string>
+    <string name="settingMessage">Cài đặt messenger</string>
+    <string name="notificationMessage">Thông báo trò chuyện</string>
+    <string name="getNotification">Nhận thông báo khi có tin nhắn mới</string>
+    <string name="interactive">Tương tác</string>
+    <string name="getInteractive">Nhận thông báo đẩy khi có tương tác với tin nhắn của bạn</string>
+    <string name="notificationFromSys">Thông báo từ hệ thống</string>
 </resources>

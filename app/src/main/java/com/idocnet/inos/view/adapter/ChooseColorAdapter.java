@@ -17,9 +17,11 @@ import java.util.List;
 public class ChooseColorAdapter extends RecyclerView.Adapter<ChooseColorAdapter.ViewHolder> {
 
     private List<Color> listColor;
+    private onItemClickListener onItemClickListener;
 
-    public ChooseColorAdapter(List<Color> listColor) {
+    public ChooseColorAdapter(List<Color> listColor, ChooseColorAdapter.onItemClickListener onClickListener) {
         this.listColor = listColor;
+        this.onItemClickListener = onClickListener;
     }
 
     @NonNull
@@ -36,6 +38,13 @@ public class ChooseColorAdapter extends RecyclerView.Adapter<ChooseColorAdapter.
         viewHolder.imgColor.setImageResource(color.getImgColor());
         viewHolder.tvColor.setText(color.getTvColor());
         viewHolder.cbColor.setChecked(color.isCbColor());
+
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClickListener.itemClick(i);
+            }
+        });
     }
 
     @Override
@@ -54,5 +63,9 @@ public class ChooseColorAdapter extends RecyclerView.Adapter<ChooseColorAdapter.
             tvColor = itemView.findViewById(R.id.tvColor);
             cbColor = itemView.findViewById(R.id.cbColor);
         }
+    }
+
+    public interface onItemClickListener{
+        void itemClick(int position);
     }
 }

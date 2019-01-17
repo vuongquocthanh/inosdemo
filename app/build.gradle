@@ -52,7 +52,8 @@ dependencies {
     implementation 'com.google.dagger:dagger-android-support:2.11'
     // if you use the support libraries
     annotationProcessor 'com.google.dagger:dagger-android-processor:2.11'
-
-//    WheelView
-    implementation 'cn.aigestudio.wheelpicker:WheelPicker:1.1.2'
+//    CirclerImageView
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+//    Floating Action Button
+    implementation 'com.github.clans:fab:1.6.4'
 }

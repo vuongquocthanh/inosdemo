@@ -16,9 +16,11 @@ import java.util.List;
 public class VisibilityAdapter extends RecyclerView.Adapter<VisibilityAdapter.ViewHolder> {
 
     private List<Visibility> listVisibility;
+    private onItemClickListener onItemClickListener;
 
-    public VisibilityAdapter(List<Visibility> listVisibility) {
+    public VisibilityAdapter(List<Visibility> listVisibility, VisibilityAdapter.onItemClickListener onItemClickListener) {
         this.listVisibility = listVisibility;
+        this.onItemClickListener = onItemClickListener;
     }
 
     @NonNull
@@ -34,6 +36,12 @@ public class VisibilityAdapter extends RecyclerView.Adapter<VisibilityAdapter.Vi
         Visibility visibility = listVisibility.get(i);
         viewHolder.tvVisibility.setText(visibility.getTvVisibility());
         viewHolder.cbVisibility.setChecked(visibility.isCbVisibility());
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClickListener.onItemClick(i);
+            }
+        });
     }
 
     @Override
@@ -48,7 +56,10 @@ public class VisibilityAdapter extends RecyclerView.Adapter<VisibilityAdapter.Vi
             super(itemView);
             tvVisibility = itemView.findViewById(R.id.tvVisibility);
             cbVisibility = itemView.findViewById(R.id.cbVisibility);
-
         }
+    }
+
+    public interface onItemClickListener{
+        void onItemClick(int position);
     }
 }

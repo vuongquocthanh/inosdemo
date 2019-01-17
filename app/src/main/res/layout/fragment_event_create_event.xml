@@ -121,6 +121,7 @@
                 android:src="@drawable/ic_task"
                 android:layout_marginRight="10dp"/>
             <TextView
+                android:id="@+id/tvEventType"
                 android:layout_width="0dp"
                 android:layout_weight="6"
                 android:layout_height="wrap_content"

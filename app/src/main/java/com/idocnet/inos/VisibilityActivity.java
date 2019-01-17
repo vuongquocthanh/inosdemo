@@ -1,5 +1,7 @@
 package com.idocnet.inos;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
@@ -22,13 +24,19 @@ public class VisibilityActivity extends AppCompatActivity {
     private RecyclerView rvVisibility;
     private List<Visibility> listVisibility;
     private VisibilityAdapter adapter;
+    public static final String VISIBILITY_NAME = "VISIBILITY_NAME";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_visibility);
         initViews();
         fakeData();
-        adapter = new VisibilityAdapter(listVisibility);
+        adapter = new VisibilityAdapter(listVisibility, position -> {
+            Intent data = new Intent();
+            data.putExtra(VISIBILITY_NAME, listVisibility.get(position).getTvVisibility());
+            setResult(Activity.RESULT_OK, data);
+            finish();
+        });
         rvVisibility.setAdapter(adapter);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         rvVisibility.setLayoutManager(layoutManager);
