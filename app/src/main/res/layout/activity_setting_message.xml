@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_back"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"/>
+            android:padding="10dp"/>
 
         <TextView
             android:id="@+id/titleProfile"

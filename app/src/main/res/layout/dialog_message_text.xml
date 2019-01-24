@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_dialog"
+        android:layout_marginBottom="10dp">
+        <TextView
+            android:id="@+id/tvGhim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ghimtinnhan"
+            style="@style/TextView"
+            android:gravity="center"
+            android:padding="20dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_line"/>
+
+        <TextView
+            android:id="@+id/tvChinhsua"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/chinhsua"
+            style="@style/TextView"
+            android:gravity="center"
+            android:padding="20dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_line"/>
+
+        <TextView
+            android:id="@+id/tvTrichdan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/trichdan"
+            style="@style/TextView"
+            android:gravity="center"
+            android:padding="20dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_line"/>
+
+        <TextView
+            android:id="@+id/tvXoaTinNhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/xoatinnhan"
+            style="@style/TextView"
+            android:gravity="center"
+            android:padding="20dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:background="@drawable/bg_dialog"
+        android:id="@+id/tvHuy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/huy"
+        style="@style/TextView"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="20dp"/>
+
+</LinearLayout>

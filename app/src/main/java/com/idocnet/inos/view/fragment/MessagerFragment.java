@@ -68,7 +68,7 @@ public class MessagerFragment extends Fragment {
                                 imgStatus.setImageResource(R.drawable.ic_circle_bnana);
                                 return true;
                             case R.id.offline:
-                                imgStatus.setImageResource(R.drawable.ic_circle_oaihuong);
+                                imgStatus.setImageResource(R.drawable.ic_offline);
                                 return true;
                             case R.id.busy:
                                 imgStatus.setImageResource(R.drawable.ic_busy);

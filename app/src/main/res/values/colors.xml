@@ -8,4 +8,6 @@
     <color name="colorText">#d2000000</color>
 
     <color name="camera">#69000000</color>
+
+    <color name="colorReceivedMessage">#C4C5C3C3</color>
 </resources>

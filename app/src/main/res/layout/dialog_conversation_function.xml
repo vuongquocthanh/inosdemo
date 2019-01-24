@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/bg_dialog"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:id="@+id/tvXemHoSo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Xem hồ sơ"
+            style="@style/TextDialog"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_line"/>
+
+        <TextView
+            android:id="@+id/tvAnCuocTroChuyen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ẩn cuộc trò "
+            style="@style/TextDialog"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_line"/>
+
+        <TextView
+            android:id="@+id/tvBlock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chặn Cao Hiếu"
+            style="@style/TextDialog"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_line"/>
+
+        <TextView
+            android:id="@+id/tvPin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ghim cuộc trò chuyện"
+            style="@style/TextDialog"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_line"/>
+
+        <TextView
+            android:id="@+id/tvXoaLienHe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xoá khỏi liên hệ"
+            style="@style/TextDialog"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvHuy"
+        android:background="@drawable/bg_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextDialog"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        android:text="Huỷ"/>
+
+</LinearLayout>

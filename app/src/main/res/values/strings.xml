@@ -54,4 +54,14 @@
     <string name="interactive">Tương tác</string>
     <string name="getInteractive">Nhận thông báo đẩy khi có tương tác với tin nhắn của bạn</string>
     <string name="notificationFromSys">Thông báo từ hệ thống</string>
+    <string name="title_activity_all_contact">AllContactActivity</string>
+    <string name="ghimtinnhan">Ghim tin nhắn</string>
+    <string name="luuanh">Lưu ảnh</string>
+    <string name="xoatinnhan">Xoá tin nhắn</string>
+    <string name="huy">Huỷ</string>
+    <string name="chinhsua">Chỉnh sửa</string>
+    <string name="trichdan">Trích dẫn</string>
+    <string name="delete_sure">Bạn có chắc chắn</string>
+    <string name="delete_sure_2">muốn xoá tin nhắn này không?</string>
+    <string name="delete">Xoá</string>
 </resources>

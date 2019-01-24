@@ -16,7 +16,7 @@
         app:showAsAction="always"/>
     <item android:id="@+id/offline"
         android:title="@string/offline"
-        android:icon="@drawable/ic_circle_oaihuong"
+        android:icon="@drawable/ic_offline"
         app:showAsAction="always"/>
 
 </menu>
