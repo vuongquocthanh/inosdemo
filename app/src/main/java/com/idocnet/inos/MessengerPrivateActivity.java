@@ -19,6 +19,7 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,21 +41,29 @@ public class MessengerPrivateActivity extends AppCompatActivity implements Messe
     private CardView controlBar;
     private ImageView imgCamera;
     private ImageView imgFile;
+    private LinearLayout lnPin;
+    private TextView tvPinName, tvPinMessage;
     private RelativeLayout rlInputMessage;
     private EditText edInputMessage;
     private ImageView imgEmoji, imgCompleteEdit;
-    private ImageView imgSent;
-    private View viewDialogMessage, viewDialogDelete;
-    private Dialog dialogMessage, dialogDelete;
+    private ImageView imgSent, imgPinClose, imgPinComplete;
+    private View viewDialogMessage, viewDialogDelete, viewDialogPinMessage;
+    private Dialog dialogMessage, dialogDelete, dialogPinMessage;
 
+//    dialogMessage
     private TextView tvChinhsua;
     private TextView tvTrichdan;
     private TextView tvXoaTinNhan;
     private TextView tvHuy;
     private TextView tvGhim;
 
+//    dialogDelete
     private TextView tvDeleteMessage;
     private TextView tvHuyMessage;
+
+//    dialogPinMessage
+    private TextView tvDialogPinMessage;
+    private TextView tvDialogCancelPinMessage;
 
     private List<Message> listMessage = new ArrayList<>();
     MessengerPrivateAdapter adapter = new MessengerPrivateAdapter(listMessage, this);
@@ -94,7 +103,12 @@ public class MessengerPrivateActivity extends AppCompatActivity implements Messe
         imgSent = findViewById(R.id.imgSent);
         rvMessenger.setAdapter(adapter);
         adapter.notifyDataSetChanged();
+        lnPin = findViewById(R.id.lnPin);
+        tvPinName = findViewById(R.id.tvPinName);
+        tvPinMessage = findViewById(R.id.tvPinMessage);
         imgCompleteEdit = findViewById(R.id.imgCompleteEdit);
+        imgPinClose = findViewById(R.id.imgPinClose);
+        imgPinComplete = findViewById(R.id.imgPinComplete);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         ((LinearLayoutManager) layoutManager).setReverseLayout(true);
         rvMessenger.setLayoutManager(layoutManager);
@@ -142,6 +156,11 @@ public class MessengerPrivateActivity extends AppCompatActivity implements Messe
         window.setBackgroundDrawableResource(android.R.color.transparent);
         tvGhim.setOnClickListener(v -> {
             Toast.makeText(MessengerPrivateActivity.this, "Ghim Tin Nhan", Toast.LENGTH_SHORT).show();
+            if (lnPin.getVisibility() == View.VISIBLE){
+                displayDialogPinMessage(position);
+            }else{
+                pinMessage(position);
+            }
             dialogMessage.dismiss();
         });
         tvChinhsua.setOnClickListener(v -> {
@@ -195,6 +214,40 @@ public class MessengerPrivateActivity extends AppCompatActivity implements Messe
         dialogDelete.show();
     }
 
+    private void displayDialogPinMessage(int position){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+        viewDialogPinMessage = inflater.inflate(R.layout.dialog_pin_message, null);
+        initViewDialogPinMessage();
+        builder.setView(viewDialogPinMessage);
+        dialogPinMessage = builder.create();
+        Window window  = dialogPinMessage.getWindow();
+        WindowManager.LayoutParams wlp  = window.getAttributes();
+        wlp.gravity = Gravity.CENTER;
+        wlp.flags &= ~WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+        window.setAttributes(wlp);
+        window.setBackgroundDrawableResource(android.R.color.transparent);
+        tvDialogPinMessage.setOnClickListener(v -> {
+            pinMessage(position);
+            dialogPinMessage.dismiss();
+        });
+
+        tvDialogCancelPinMessage.setOnClickListener(v -> dialogPinMessage.dismiss());
+        dialogPinMessage.show();
+    }
+
+    private void pinMessage(int position){
+        lnPin.setVisibility(View.VISIBLE);
+        tvPinName.setText("Cao Van Hieu");
+        tvPinMessage.setText(listMessage.get(position).getMessage());
+        imgPinClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lnPin.setVisibility(View.GONE);
+            }
+        });
+    }
+
     private void initViewDialogMessage() {
         tvGhim = viewDialogMessage.findViewById(R.id.tvGhim);
         tvChinhsua = viewDialogMessage.findViewById(R.id.tvChinhsua);
@@ -206,5 +259,11 @@ public class MessengerPrivateActivity extends AppCompatActivity implements Messe
     private void initViewDialogDelete(){
         tvDeleteMessage = viewDialogDelete.findViewById(R.id.tvDeleteMessage);
         tvHuyMessage = viewDialogDelete.findViewById(R.id.tvHuyMessage);
+    }
+
+    private void initViewDialogPinMessage(){
+        tvDialogPinMessage = viewDialogPinMessage.findViewById(R.id.tvDialogPinMessage);
+        tvDialogCancelPinMessage = viewDialogPinMessage.findViewById(R.id.tvDialogCancelPinMessage);
+
     }
 }
