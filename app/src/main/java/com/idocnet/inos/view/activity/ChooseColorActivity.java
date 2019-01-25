@@ -1,4 +1,4 @@
-package com.idocnet.inos;
+package com.idocnet.inos.view.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.idocnet.inos.R;
 import com.idocnet.inos.model.Color;
 import com.idocnet.inos.view.adapter.ChooseColorAdapter;
 import com.idocnet.inos.view.fragment.event.EventTypeFragment;

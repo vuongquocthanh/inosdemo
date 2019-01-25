@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <ImageView
+        android:id="@+id/imgAvatar"
+        android:layout_width="@dimen/avatar_size"
+        android:layout_centerVertical="true"
+        android:layout_height="@dimen/avatar_size"
+        android:src="@drawable/ic_avatar"/>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_toRightOf="@id/imgAvatar"
+        android:layout_width="wrap_content"
+        style="@style/TextView"
+        android:layout_marginLeft="15dp"
+        android:text="Vũ Hồng Hạnh"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content" />
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@drawable/checkbox_group"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"/>
+
+</RelativeLayout>

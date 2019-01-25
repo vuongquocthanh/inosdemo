@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvAddInfo"
-        android:textSize="18sp"
+        style="@style/TextView"
         android:textColor="@color/colorText"
         android:text="Mục đích công việc"/>
 

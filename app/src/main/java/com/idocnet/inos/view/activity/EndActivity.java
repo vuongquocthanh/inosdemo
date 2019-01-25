@@ -1,4 +1,4 @@
-package com.idocnet.inos;
+package com.idocnet.inos.view.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import com.idocnet.inos.R;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;

@@ -1,4 +1,4 @@
-package com.idocnet.inos;
+package com.idocnet.inos.view.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.idocnet.inos.R;
 import com.idocnet.inos.model.Visibility;
 import com.idocnet.inos.view.adapter.VisibilityAdapter;
 

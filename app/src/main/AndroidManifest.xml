@@ -14,9 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".UserInfoActivity"></activity>
-        <activity android:name=".MessengerPrivateActivity" />
-        <activity android:name=".AllContactActivity" />
+        <activity android:name=".view.activity.CreateConversationActivity"></activity>
+        <activity android:name=".view.activity.CreateGroupActivity" />
+        <activity android:name=".view.activity.UserInfoActivity" />
+        <activity android:name=".view.activity.MessengerPrivateActivity" />
+        <activity android:name=".view.activity.AllContactActivity" />
         <activity android:name=".view.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,17 +27,17 @@
             </intent-filter>
         </activity>
         <activity android:name=".app.BaseMenuActivity" />
-        <activity android:name=".AddParticipantsActivity" />
-        <activity android:name=".AddInfoActivity" />
-        <activity android:name=".RepeatActivity" />
-        <activity android:name=".RemindActivity" />
-        <activity android:name=".NotificationActivity" />
-        <activity android:name=".BeforeEventActivity" />
-        <activity android:name=".EndActivity" />
-        <activity android:name=".ChooseColorActivity" />
-        <activity android:name=".VisibilityActivity" />
-        <activity android:name=".EventTypeActivity" />
-        <activity android:name=".SettingMessageActivity" />
+        <activity android:name=".view.activity.AddParticipantsActivity" />
+        <activity android:name=".view.activity.AddInfoActivity" />
+        <activity android:name=".view.activity.RepeatActivity" />
+        <activity android:name=".view.activity.RemindActivity" />
+        <activity android:name=".view.activity.NotificationActivity" />
+        <activity android:name=".view.activity.BeforeEventActivity" />
+        <activity android:name=".view.activity.EndActivity" />
+        <activity android:name=".view.activity.ChooseColorActivity" />
+        <activity android:name=".view.activity.VisibilityActivity" />
+        <activity android:name=".view.activity.EventTypeActivity" />
+        <activity android:name=".view.activity.SettingMessageActivity" />
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.idocnet.inos;
+package com.idocnet.inos.view.activity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -24,12 +24,16 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.idocnet.inos.R;
 import com.idocnet.inos.model.Message;
 import com.idocnet.inos.view.adapter.MessengerPrivateAdapter;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MessengerPrivateActivity extends AppCompatActivity implements MessengerPrivateAdapter.Listener {
 
@@ -42,11 +46,11 @@ public class MessengerPrivateActivity extends AppCompatActivity implements Messe
     private ImageView imgCamera;
     private ImageView imgFile;
     private LinearLayout lnPin;
-    private TextView tvPinName, tvPinMessage;
+    private TextView tvPinName, tvPinMessage, tvMore;
     private RelativeLayout rlInputMessage;
     private EditText edInputMessage;
     private ImageView imgEmoji, imgCompleteEdit;
-    private ImageView imgSent, imgPinClose, imgPinComplete;
+    private ImageView imgSent, imgPinClose, imgPinMore;
     private View viewDialogMessage, viewDialogDelete, viewDialogPinMessage;
     private Dialog dialogMessage, dialogDelete, dialogPinMessage;
 
@@ -88,6 +92,15 @@ public class MessengerPrivateActivity extends AppCompatActivity implements Messe
         imgInfo.setOnClickListener(v -> startActivity(new Intent(MessengerPrivateActivity.this, UserInfoActivity.class)));
     }
 
+    @OnClick(R.id.imgPinMore)
+    void tvMoreClick(){
+        if (tvMore.getVisibility() == View.GONE){
+            tvMore.setVisibility(View.VISIBLE);
+        }else if(tvMore.getVisibility() == View.VISIBLE){
+            tvMore.setVisibility(View.GONE);
+        }
+    }
+
     private void initViews(){
         rlToolbar = findViewById(R.id.rlToolbar);
         toolbarMessenger = findViewById(R.id.toolbarMessenger);
@@ -106,12 +119,15 @@ public class MessengerPrivateActivity extends AppCompatActivity implements Messe
         lnPin = findViewById(R.id.lnPin);
         tvPinName = findViewById(R.id.tvPinName);
         tvPinMessage = findViewById(R.id.tvPinMessage);
+        tvMore = findViewById(R.id.tvMore);
         imgCompleteEdit = findViewById(R.id.imgCompleteEdit);
         imgPinClose = findViewById(R.id.imgPinClose);
-        imgPinComplete = findViewById(R.id.imgPinComplete);
+        imgPinMore = findViewById(R.id.imgPinMore);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         ((LinearLayoutManager) layoutManager).setReverseLayout(true);
         rvMessenger.setLayoutManager(layoutManager);
+
+        ButterKnife.bind(this);
     }
 
     private String setTime(long time){
@@ -169,11 +185,16 @@ public class MessengerPrivateActivity extends AppCompatActivity implements Messe
             imgCompleteEdit.setVisibility(View.VISIBLE);
             imgSent.setVisibility(View.GONE);
             imgCompleteEdit.setOnClickListener(v1 -> {
-                listMessage.get(position).setMessage(edInputMessage.getText().toString().trim());
-                adapter.notifyDataSetChanged();
-                edInputMessage.setText("");
-                imgSent.setVisibility(View.VISIBLE);
-                imgCompleteEdit.setVisibility(View.GONE);
+                if (edInputMessage.getText().toString().trim().equals("")){
+                    listMessage.remove(position);
+                    adapter.notifyDataSetChanged();
+                }else{
+                    listMessage.get(position).setMessage(edInputMessage.getText().toString().trim());
+                    adapter.notifyDataSetChanged();
+                    edInputMessage.setText("");
+                    imgSent.setVisibility(View.VISIBLE);
+                    imgCompleteEdit.setVisibility(View.GONE);
+                }
             });
             dialogMessage.dismiss();
         });

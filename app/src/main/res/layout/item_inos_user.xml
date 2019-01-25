@@ -3,12 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
+    android:gravity="center_vertical"
     android:padding="10dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/civAvatar"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="@dimen/avatar_size"
+        android:layout_height="@dimen/avatar_size"
         android:src="@drawable/avatar1"/>
 
     <LinearLayout
@@ -18,12 +19,9 @@
         android:layout_marginLeft="15dp">
         <TextView
             android:id="@+id/tvName"
-            android:textStyle="bold"
             style="@style/TextView"
             android:layout_gravity="center_vertical"
-            android:text="Hoang Tung"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:text="Hoang Tung"/>
         <TextView
             android:layout_width="wrap_content"
             android:textColor="@color/colorGray"

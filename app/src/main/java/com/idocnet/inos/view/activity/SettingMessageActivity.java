@@ -1,4 +1,4 @@
-package com.idocnet.inos;
+package com.idocnet.inos.view.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
+
+import com.idocnet.inos.R;
 
 public class SettingMessageActivity extends AppCompatActivity {
     private Toolbar toolbarHome;

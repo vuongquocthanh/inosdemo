@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="15dp"
+    android:gravity="center_vertical"
     android:orientation="horizontal"
     android:id="@+id/lnNotification">
 
@@ -13,7 +14,7 @@
         android:layout_height="wrap_content"
         android:text="Notification"
         android:textColor="@color/colorText"
-        android:textSize="18sp"/>
+        style="@style/TextView"/>
 
     <CheckBox
         android:id="@+id/checkboxNotification"

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.CreateGroupActivity"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbarCreateGroup"
+            android:layout_width="match_parent"
+            android:background="@color/colorPrimary"
+            android:layout_height="?attr/actionBarSize"/>
+
+        <TextView
+            android:id="@+id/tvHuy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Huỷ"
+            android:layout_centerVertical="true"
+            style="@style/TextView"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:padding="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tạo nhóm"
+            android:layout_centerInParent="true"
+            style="@style/TextView"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lưu"
+            style="@style/TextView"
+            android:textColor="@color/colorWhite"
+            android:layout_alignParentRight="true"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:padding="15dp"/>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/colorWhite"
+        android:padding="15dp">
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_avatar"/>
+
+        <EditText
+            android:id="@+id/edGroupName"
+            android:layout_marginLeft="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Đặt tên nhóm..."
+            android:background="@color/colorWhite"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/bg_line"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_search_group"
+            android:padding="10dp"
+            android:layout_margin="15dp"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_search_group"/>
+            <EditText
+                android:id="@+id/edSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:hint="Tìm kiếm"
+                android:background="#e6f2ff"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tvCancelSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Huỷ"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:layout_gravity="center_vertical"
+            android:padding="15dp"
+            style="@style/TextView"
+            />
+    </LinearLayout>
+
+
+    
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvCreateGroup"
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

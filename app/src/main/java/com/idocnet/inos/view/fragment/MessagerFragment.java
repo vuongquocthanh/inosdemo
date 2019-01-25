@@ -27,7 +27,9 @@ import android.widget.Toast;
 
 import com.github.clans.fab.FloatingActionButton;
 import com.idocnet.inos.R;
-import com.idocnet.inos.SettingMessageActivity;
+import com.idocnet.inos.view.activity.CreateConversationActivity;
+import com.idocnet.inos.view.activity.CreateGroupActivity;
+import com.idocnet.inos.view.activity.SettingMessageActivity;
 import com.idocnet.inos.view.adapter.MessagePagerAdapter;
 
 import butterknife.ButterKnife;
@@ -45,6 +47,7 @@ public class MessagerFragment extends Fragment {
     private MessagePagerAdapter messagePagerAdapter;
     private FloatingActionButton fabNewConversation;
     private FloatingActionButton fabNewGroup;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -83,11 +86,14 @@ public class MessagerFragment extends Fragment {
             }
         });
 
-        fabNewConversation.setOnClickListener(v -> Toast.makeText(viewFragment.getContext(), "fabNewConversation Clicked!", Toast.LENGTH_SHORT).show());
+        fabNewConversation.setOnClickListener(v -> {
+            startActivity(new Intent(viewFragment.getContext(),CreateConversationActivity.class));
+        });
 
 
-
-        fabNewGroup.setOnClickListener(v -> Toast.makeText(viewFragment.getContext(), "fabNewGroup Clicked!", Toast.LENGTH_SHORT).show());
+        fabNewGroup.setOnClickListener(v -> {
+            startActivity(new Intent(viewFragment.getContext(), CreateGroupActivity.class));
+        });
         searchViewMessage.setOnSearchClickListener(v -> avatar.setVisibility(View.GONE));
         searchViewMessage.setOnCloseListener(() -> {
             avatar.setVisibility(View.VISIBLE);
@@ -100,21 +106,6 @@ public class MessagerFragment extends Fragment {
         viewPagerMessage.setAdapter(messagePagerAdapter);
         tabLayoutMessage.setupWithViewPager(viewPagerMessage);
         return viewFragment;
-    }
-
-    public void initViews() {
-        searchViewMessage = viewFragment.findViewById(R.id.searchViewMessage);
-        avatar = viewFragment.findViewById(R.id.avatar);
-        toolbar = viewFragment.findViewById(R.id.toolbar);
-        imgAvatar = viewFragment.findViewById(R.id.imgAvatar);
-        imgStatus = viewFragment.findViewById(R.id.imgStatus);
-        tabLayoutMessage = viewFragment.findViewById(R.id.tabLayoutMessage);
-        viewPagerMessage = viewFragment.findViewById(R.id.viewPagerMessage);
-        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
-        toolbar.setTitle("");
-        toolbar.setOverflowIcon(getResources().getDrawable(R.drawable.ic_more_vert_));
-        fabNewConversation = viewFragment.findViewById(R.id.fabNewConversation);
-        fabNewGroup = viewFragment.findViewById(R.id.fabNewGroup);
     }
 
     @Override
@@ -141,5 +132,20 @@ public class MessagerFragment extends Fragment {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void initViews() {
+        searchViewMessage = viewFragment.findViewById(R.id.searchViewMessage);
+        avatar = viewFragment.findViewById(R.id.avatar);
+        toolbar = viewFragment.findViewById(R.id.toolbar);
+        imgAvatar = viewFragment.findViewById(R.id.imgAvatar);
+        imgStatus = viewFragment.findViewById(R.id.imgStatus);
+        tabLayoutMessage = viewFragment.findViewById(R.id.tabLayoutMessage);
+        viewPagerMessage = viewFragment.findViewById(R.id.viewPagerMessage);
+        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
+        toolbar.setTitle("");
+        toolbar.setOverflowIcon(getResources().getDrawable(R.drawable.ic_more_vert_));
+        fabNewConversation = viewFragment.findViewById(R.id.fabNewConversation);
+        fabNewGroup = viewFragment.findViewById(R.id.fabNewGroup);
     }
 }

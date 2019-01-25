@@ -16,9 +16,8 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.idocnet.inos.MessengerPrivateActivity;
+import com.idocnet.inos.view.activity.MessengerPrivateActivity;
 import com.idocnet.inos.R;
 import com.idocnet.inos.model.Conversation;
 import com.idocnet.inos.view.adapter.AdapterConversation;

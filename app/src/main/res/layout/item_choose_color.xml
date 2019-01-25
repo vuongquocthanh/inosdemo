@@ -17,7 +17,7 @@
         android:id="@+id/tvColor"
         android:textColor="@color/colorText"
         android:text="Màu mặc định"
-        android:textSize="18sp"
+        style="@style/TextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="2"/>

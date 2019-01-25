@@ -1,24 +1,13 @@
-package com.idocnet.inos;
+package com.idocnet.inos.view.activity;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.idocnet.inos.model.Notification;
-import com.idocnet.inos.view.adapter.NotificationAdapter;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.idocnet.inos.R;
 
 public class NotificationActivity extends AppCompatActivity {
     private ImageView imgBack;

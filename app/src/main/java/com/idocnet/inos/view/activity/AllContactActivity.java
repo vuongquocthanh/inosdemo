@@ -1,4 +1,4 @@
-package com.idocnet.inos;
+package com.idocnet.inos.view.activity;
 
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.idocnet.inos.R;
 import com.idocnet.inos.view.fragment.FragmentAllContact;
 import com.idocnet.inos.view.fragment.message.FragmentSearchAllContact;
 

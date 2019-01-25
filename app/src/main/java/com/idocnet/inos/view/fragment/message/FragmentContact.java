@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
-import com.idocnet.inos.AllContactActivity;
+import com.idocnet.inos.view.activity.AllContactActivity;
 import com.idocnet.inos.R;
 
 public class FragmentContact extends Fragment {

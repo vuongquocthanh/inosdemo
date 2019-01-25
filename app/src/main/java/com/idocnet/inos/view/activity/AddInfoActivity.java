@@ -1,4 +1,4 @@
-package com.idocnet.inos;
+package com.idocnet.inos.view.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.idocnet.inos.R;
 import com.idocnet.inos.model.AddInfo;
 import com.idocnet.inos.view.adapter.AddInfoAdapter;
 
